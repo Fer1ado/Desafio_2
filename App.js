@@ -33,6 +33,6 @@ console.log(await ejecutar.getProductById(4)) /// BUSCAR PRODUCTO POR ID
 
 console.log(await ejecutar.getProductById(18)) /// ID NO ENCONTRADO
 
-console.log(await ejecutar.updateProduct(1, {title: "lasagña"})) // EDITAR PRODUCTO
+//console.log(await ejecutar.updateProduct(1, {title: "lasagña"})) // EDITAR PRODUCTO
 
-console.log(await ejecutar.deleteProduct(4)) // ELIMINAR PRODUCTO
+//console.log(await ejecutar.deleteProduct(3)) // ELIMINAR PRODUCTO

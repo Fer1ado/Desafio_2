@@ -13,7 +13,7 @@ export default class ProductManager {
     //transformo a objeto el archivo json para chequear por duplicados
     const producto = JSON.parse(await fs.readFile(ruta, "utf-8"));
     //chequeo si el producto no esta repetido
-    const prod = producto.find((prod) => prod.code === input.code);
+    const prod = producto.some((prod) => prod.code === input.code);
 
     if (check) {
       console.log("Producto Incompleto");
@@ -51,12 +51,12 @@ export default class ProductManager {
     const index = producto.findIndex((prod) => prod.id === id);
 
     if (index !== -1) {
-        this.products[index].title = edicion.title;
-        this.products[index].description = edicion.description;
-        this.products[index].price = edicion.price;
-        this.products[index].code = edicion.code;
-        this.products[index].stock = edicion.stock;
-        this.products[index].thumbnail = edicion.thumbnail;
+      this.products[index].title = edicion.title;
+      this.products[index].description = edicion.description;
+      this.products[index].price = edicion.price;
+      this.products[index].code = edicion.code;
+      this.products[index].stock = edicion.stock;
+      this.products[index].thumbnail = edicion.thumbnail;
       await fs.writeFile(ruta, JSON.stringify(this.products));
     } else {
       console.log("Producto no encontrado");
